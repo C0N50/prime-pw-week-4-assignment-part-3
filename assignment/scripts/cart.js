@@ -20,12 +20,21 @@ function addItem (item) {
     console.log('Input Error, Expects 1 Argument');
     return false;
     }
-}
-    
+} //end addItem
+   
+
+function listItems() {
+    for (let item of basket) {
+        console.log(item, '\n');
+    }
+} //end listItems
+
+
+
 
 //add Item Test Cases.
  //Functionality Tests
-console.log('test addItem(shirt) - should return true', addItem('shirt'), '\n' +'array contains "', basket); 
+console.log('test addItem(\'shirt\') - should return true', addItem('shirt'), '\n' +'array contains "', basket); 
 console.log('test addItem(\'100\') - should return true', addItem('100'), '\n' +'array contains "', basket); 
 
 //Error Handling Tests
@@ -33,3 +42,5 @@ console.log('test addItem(30) - should return error', addItem(30), '\n' +'array 
 console.log('test addItem() - should return error', addItem(), '\n' +'array contains "', basket);   
 console.log('test addItem(shirt) - should return error', addItem('boots', 'milk'), '\n' +'array contains "', basket);
 
+//listItems Test Cases
+console.log('test listItems', listItems());

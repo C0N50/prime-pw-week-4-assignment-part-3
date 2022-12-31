@@ -30,6 +30,11 @@ function listItems() {
 } //end listItems
 
 
+function empty () {
+    while (basket.length > 0 && basket !== undefined) {
+        basket.pop();
+    }
+}
 
 
 //add Item Test Cases.
@@ -44,3 +49,11 @@ console.log('test addItem(shirt) - should return error', addItem('boots', 'milk'
 
 //listItems Test Cases
 console.log('test listItems', listItems());
+
+//empty Test Cases
+
+console.log(`Basket is ${basket}`);
+console.log('test empty on full array', empty());
+console.log(`Basket is ${basket}`);
+console.log('test empty on empty array', empty());
+console.log(`Basket is ${basket}`);

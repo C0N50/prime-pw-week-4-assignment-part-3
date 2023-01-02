@@ -45,12 +45,27 @@ function listItems() {
 } //end listItems
 
 
-function empty () {
+function empty() {
     while (basket.length > 0 && basket !== undefined) {
         basket.pop();
     }
-}
+} //end empty
 
+function removeItem(item) {
+    if(basket.indexOf(item) >= 0) {
+        let index = basket.indexOf(item);
+        let outputArray = basket.splice(index, 1);
+        if (outputArray.length > 0) {
+            return outputArray[0];
+        }
+        else {
+            return null;
+        }
+    }
+    else {
+        return null;
+    }
+} //end removeItem
 
 
 
@@ -79,6 +94,15 @@ console.log('test listItems', listItems());
 console.log('***** isFulll Functionality Test *****');
 console.log('isFull should return true', isFull());
 
+//removeItem
+console.log('***** removeItem Functionality Test *****');
+console.log('test removeItem - should return \'T-shirt\'', removeItem('T-shirt'));
+console.log(`Basket is ${basket}`);
+console.log('test removeItem - should return \'Rush Hour 2\'', removeItem('Rush Hour 2'));
+console.log(`Basket is ${basket}`);
+console.log('test removeItem - should return null', removeItem('Pokemon Yellow'));
+console.log(`Basket is ${basket}`);
+
 //empty Test Cases
 console.log('***** empty Functionality Test *****');
 console.log(`Basket is ${basket}`);
@@ -90,3 +114,4 @@ console.log(`Basket is ${basket}`);
 //isFull Test Cases
 console.log('***** isFulll Functionality Test *****');
 console.log('isFull should return false', isFull());
+

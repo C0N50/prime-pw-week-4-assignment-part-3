@@ -28,12 +28,12 @@ function addItem (item) {
         } //end check if input is string
         else {
         console.log('Input Error, Expects String');
-        return undefined;
+        return false;
         }
     }
     else {
     console.log('Input Error, Expects 1 Argument');
-    return undefined;
+    return false;
     }
 } //end addItem
    
@@ -52,19 +52,31 @@ function empty() {
 } //end empty
 
 function removeItem(item) {
-    if(basket.indexOf(item) >= 0) {
-        let index = basket.indexOf(item);
-        let outputArray = basket.splice(index, 1);
-        if (outputArray.length > 0) {
-            return outputArray[0];
+    if(arguments.length == 1) {
+        if(typeof(item) == "string") {
+            if(basket.indexOf(item) >= 0) {
+                let index = basket.indexOf(item);
+                let outputArray = basket.splice(index, 1);
+                if (outputArray.length > 0) {
+                    return outputArray[0];
+                }
+                else {
+                    return null;
+                }
+             }
+             else {
+                return null;
+            }
         }
         else {
-            return null;
+            console.log('Input Error, Expects String');
+            return false;
         }
     }
     else {
-        return null;
-    }
+        console.log('Input Error, Expects 1 Argument');
+        return false;
+        }
 } //end removeItem
 
 
@@ -82,36 +94,48 @@ console.log('test addItem(\'Shoelaces\') cart is full - should return false ', a
 
 //Error Handling Tests
 console.log('***** addItem Error Handling Tests *****');
-console.log('test addItem(30) - should return error', addItem(30), '\n' +'array contains "', basket); 
-console.log('test addItem() - should return error', addItem(), '\n' +'array contains "', basket);   
-console.log('test addItem(shirt) - should return error', addItem('boots', 'milk'), '\n' +'array contains "', basket);
+console.log('test addItem(30) - should return error & false', addItem(30), '\n' +'array contains "', basket); 
+console.log('test addItem() - should return error & false', addItem(), '\n' +'array contains "', basket);   
+console.log('test addItem(shirt) - should return error & false', addItem('boots', 'milk'), '\n' +'array contains "', basket);
 
 //listItems Test Cases
 console.log('***** listItems Functionality Test *****');
 console.log('test listItems', listItems());
 
 //isFull Test Cases
-console.log('***** isFulll Functionality Test *****');
+console.log('***** isFulll Functionality Test Full Basket *****');
 console.log('isFull should return true', isFull());
 
-//removeItem
+//removeItem functionality tests
 console.log('***** removeItem Functionality Test *****');
 console.log('test removeItem - should return \'T-shirt\'', removeItem('T-shirt'));
-console.log(`Basket is ${basket}`);
+console.log('Basket is,', basket);
 console.log('test removeItem - should return \'Rush Hour 2\'', removeItem('Rush Hour 2'));
-console.log(`Basket is ${basket}`);
+console.log('Basket is,', basket);
 console.log('test removeItem - should return null', removeItem('Pokemon Yellow'));
-console.log(`Basket is ${basket}`);
+console.log('Basket is,', basket);
+
+//remove iItem error handling tests
+console.log('***** removeItem error handling Tests *****');
+console.log('test removeItem(30) - should return error & false', removeItem(30));
+console.log('test removeItem() - should return error & false', removeItem());
+console.log('test removeItem(shirt) - should return error & false', removeItem('boots', 'milk'));
+console.log('Basket is,', basket);
+
+//isFull Test Cases
+console.log('***** isFulll Functionality Test Partially Full Basket *****');
+console.log('isFull should return false', isFull());
+
 
 //empty Test Cases
 console.log('***** empty Functionality Test *****');
-console.log(`Basket is ${basket}`);
+console.log('Basket is,', basket);
 console.log('test empty on full array', empty());
-console.log(`Basket is ${basket}`);
+console.log('Basket is,', basket);
 console.log('test empty on empty array', empty());
-console.log(`Basket is ${basket}`);
+console.log('Basket is,', basket);
 
 //isFull Test Cases
-console.log('***** isFulll Functionality Test *****');
+console.log('***** isFulll Functionality Test Empty Basket *****');
 console.log('isFull should return false', isFull());
 

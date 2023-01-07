@@ -15,6 +15,7 @@ function isFull() {
     }
 } //end isFull
 
+
 function addItem (item) {
     if(arguments.length == 1) {
         if(typeof(item) == "string") {
@@ -51,6 +52,7 @@ function empty() {
     }
 } //end empty
 
+
 function removeItem(item) {
     if(arguments.length == 1) {
         if(typeof(item) == "string") {
@@ -78,8 +80,6 @@ function removeItem(item) {
         return false;
         }
 } //end removeItem
-
-
 
 
 //add Item Test Cases.

@@ -123,7 +123,7 @@ console.log('Basket is,', basket);
 console.log('\n'+'\n');
 
 
-//remove iItem error handling tests
+//remove Item error handling tests
 console.log('***** removeItem error handling Tests *****');
 console.log('test removeItem(30) - should return error & false', removeItem(30));
 console.log('test removeItem() - should return error & false', removeItem());

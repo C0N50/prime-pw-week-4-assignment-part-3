@@ -2,6 +2,7 @@
 // We want to see how you are testing your code!!!
 
 console.log('***** Cart Functions *****');
+console.log('\n'+'\n');
 
 let basket = [];
 const maxItems = 5;
@@ -89,6 +90,13 @@ function removeItem(item) {
 
 
 //add Item Test Cases.
+//Error Handling Tests
+console.log('***** addItem Error Handling Tests *****');
+console.log('test addItem(30) - should return error & false', addItem(30), '\n' +'array contains "', basket); 
+console.log('test addItem() - should return error & false', addItem(), '\n' +'array contains "', basket);   
+console.log('test addItem(\'boots\', \'milk\') - should return error & false', addItem('boots', 'milk'), '\n' +'array contains "', basket);
+console.log('\n'+'\n');
+
  //Functionality Tests
 console.log('***** addItem Functionality Tests *****');
 console.log('test addItem(\'shirt\') - should return true', addItem('T-shirt'), '\n' +'array contains "', basket); 
@@ -99,24 +107,23 @@ console.log('test addItem(\'Rush Hour 2\') - should return true', addItem('Rush 
 console.log('test addItem(\'Shoelaces\') cart is full - should return false ', addItem('Shoelaces'), '\n' +'array contains "', basket);
 console.log('\n'+'\n');
 
-//Error Handling Tests
-console.log('***** addItem Error Handling Tests *****');
-console.log('test addItem(30) - should return error & false', addItem(30), '\n' +'array contains "', basket); 
-console.log('test addItem() - should return error & false', addItem(), '\n' +'array contains "', basket);   
-console.log('test addItem(shirt) - should return error & false', addItem('boots', 'milk'), '\n' +'array contains "', basket);
-console.log('\n'+'\n');
-
 //listItems Test Cases
 console.log('***** listItems Functionality Test *****');
 console.log('test listItems', listItems());
 console.log('\n'+'\n');
-
 
 //isFull Test Cases
 console.log('***** isFulll Functionality Test Full Basket *****');
 console.log('isFull should return true', isFull());
 console.log('\n'+'\n');
 
+//remove Item error handling tests
+console.log('***** removeItem error handling Tests *****');
+console.log('test removeItem(30) - should return error & false', removeItem(30));
+console.log('test removeItem() - should return error & false', removeItem());
+console.log('test removeItem(shirt) - should return error & false', removeItem('boots', 'milk'));
+console.log('Basket is,', basket);
+console.log('\n'+'\n');
 
 //removeItem functionality tests
 console.log('***** removeItem Functionality Test *****');
@@ -127,16 +134,6 @@ console.log('Basket is,', basket);
 console.log('test removeItem - should return null', removeItem('Pokemon Yellow'));
 console.log('Basket is,', basket);
 console.log('\n'+'\n');
-
-
-//remove Item error handling tests
-console.log('***** removeItem error handling Tests *****');
-console.log('test removeItem(30) - should return error & false', removeItem(30));
-console.log('test removeItem() - should return error & false', removeItem());
-console.log('test removeItem(shirt) - should return error & false', removeItem('boots', 'milk'));
-console.log('Basket is,', basket);
-console.log('\n'+'\n');
-
 
 //isFull Test Cases
 console.log('***** isFulll Functionality Test Partially Full Basket *****');

@@ -156,6 +156,8 @@ console.log('\n'+'\n');
 //isFull Test Cases
 console.log('***** isFulll Functionality Test Empty Basket *****');
 console.log('isFull should return false', isFull());
+console.log('\n'+'\n');
+
 
 //listItems Test Cases
 console.log('***** listItems Empty basket Test *****');

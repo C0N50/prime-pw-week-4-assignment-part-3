@@ -40,8 +40,13 @@ function addItem (item) {
    
 
 function listItems() {
-    for (let item of basket) {
-        console.log(item, '\n');
+    if (basket.length > 0) {
+        for (let item of basket) {
+            console.log(item, '\n');
+        }
+    }
+    else {
+        return 0;
     }
 } //end listItems
 
@@ -152,3 +157,7 @@ console.log('\n'+'\n');
 console.log('***** isFulll Functionality Test Empty Basket *****');
 console.log('isFull should return false', isFull());
 
+//listItems Test Cases
+console.log('***** listItems Empty basket Test *****');
+console.log('test listItems should return 0', listItems());
+console.log('\n'+'\n');

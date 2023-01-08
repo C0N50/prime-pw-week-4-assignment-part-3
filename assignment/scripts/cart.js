@@ -44,9 +44,10 @@ function listItems() {
         for (let item of basket) {
             console.log(item, '\n');
         }
+        return true;
     }
     else {
-        return 0;
+        return false;
     }
 } //end listItems
 
@@ -161,5 +162,5 @@ console.log('\n'+'\n');
 
 //listItems Test Cases
 console.log('***** listItems Empty basket Test *****');
-console.log('test listItems should return 0', listItems());
+console.log('test listItems should return false', listItems());
 console.log('\n'+'\n');
